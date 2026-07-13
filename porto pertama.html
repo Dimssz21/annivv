@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ffd6e5,#ffe7ef,#fff4f8);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* Hati jatuh */
+.heart{
+    position:fixed;
+    color:#ff6b9e;
+    font-size:20px;
+    animation:fall linear infinite;
+    top:-10px;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+.container{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    padding:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* FOTO */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,160px);
+    gap:15px;
+}
+
+.gallery img{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:18px;
+    border:5px solid white;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05) rotate(-2deg);
+}
+
+/* KARTU */
+.card{
+    width:520px;
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 20px 40px rgba(255,92,141,.25);
+    animation:show 1s ease;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.love{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.title{
+    text-align:center;
+    color:#ff5c8d;
+    font-size:36px;
+    margin-bottom:5px;
+}
+
+.name{
+    text-align:center;
+    color:#666;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.line{
+    width:90px;
+    height:4px;
+    background:#ff5c8d;
+    margin:0 auto 25px;
+    border-radius:20px;
+}
+
+p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.footer{
+    text-align:right;
+    margin-top:25px;
+    color:#ff5c8d;
+    font-weight:bold;
+}
+
+.music{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:white;
+    border-radius:15px;
+    padding:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+}
+
+.gallery{
+    grid-template-columns:repeat(2,130px);
+}
+
+.gallery img{
+    width:130px;
+    height:130px;
+}
+
+.card{
+    width:95%;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<!-- FOTO -->
+<div class="gallery">
+    <img src="WhatsApp Image 2026-07-13 at 22.11.47.jpeg">
+    <img src="WhatsApp Image 2026-07-13 at 22.15.31.jpeg">
+    <img src="WhatsApp Image 2026-07-13 at 22.15.40.jpeg">
+    <img src="WhatsApp Image 2026-07-13 at 22.16.10.jpeg">
+</div>
+
+<!-- KARTU -->
+<div class="card">
+
+<div class="love">🤍</div>
+
+<h1 class="title">Happy Anniversary</h1>
+
+<div class="name">
+Dimas & Jasmine<br>
+4 Juli
+</div>
+
+<div class="line"></div>
+
+<p>
+Happy Anniversary yaa, jasmine.
+Harusnya sekarang ni masih jadi hari special kita, tapi ternyata ada masalah yg buat kita jdi ga bersama lgi
+</p>
+
+<p>
+Aku cuma pengen bilang makasih, karena dulu kamu pernah jadi bagian yang bikin banyak hari terasa lebih seru. Walaupun sekarang semuanya udah beda, kenangannya tetap ada.
+</p>
+
+<p>
+Aku cuma pengen ngucapin aja si, mungkin untuk yang terakhir kalinya. tpi jangan lupain kenangan2 kita yg dulu disaat sedih maupun happy ya :)
+</p>
+
+<p>
+Semoga kamu bisa bangaain ortumu, selalu kuat ngehadepin masalah, dpet yg lebih baik dri aku tapi yg seiman, dll. Makasih ya, buat semuanya.
+</p>
+
+<div class="footer">
+— Dimas 🤍
+</div>
+
+</div>
+
+</div>
+
+<!-- Musik -->
+<div class="music">
+<audio controls loop>
+    <source src="A Sorrowful Reunion - Reality Club  Lirik Terjemahan Indonesia.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+// Hati jatuh
+function heart(){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="🤍";
+
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(4+Math.random()*5)+"s";
+    h.style.fontSize=(15+Math.random()*20)+"px";
+
+    document.body.appendChild(h);
+
+    setTimeout(()=>{
+        h.remove();
+    },9000);
+}
+
+setInterval(heart,400);
+</script>
+
+</body>
+</html>
